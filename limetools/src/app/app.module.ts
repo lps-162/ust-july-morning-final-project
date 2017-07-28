@@ -6,6 +6,7 @@ import { HomeComponent } from './erp/home/home.component';
 import { AboutComponent } from './erp/about/about.component';
 import { EmployeesListComponent } from './erp/employees/employees-list/employees-list.component';
 import { NavbarComponent } from './erp/navbar/navbar.component';
+import { appRouting } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavbarComponent } from './erp/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    appRouting
   ],
   providers: [],
   bootstrap: [AppComponent]
