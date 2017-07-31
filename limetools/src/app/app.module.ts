@@ -8,6 +8,9 @@ import { EmployeesListComponent } from './erp/employees/employees-list/employees
 import { NavbarComponent } from './erp/navbar/navbar.component';
 import { appRouting } from './app.routing';
 import { EmployeeDetailsComponent } from './erp/employees/employee-details/employee-details.component';
+import { NotFoundComponent } from './erp/not-found/not-found.component';
+import { EmployeeCreateComponent } from './erp/employees/employee-create/employee-create.component';
+import { EmployeesSectionComponent } from './erp/employees/employees-section/employees-section.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { EmployeeDetailsComponent } from './erp/employees/employee-details/emplo
     AboutComponent,
     EmployeesListComponent,
     NavbarComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    NotFoundComponent,
+    EmployeeCreateComponent,
+    EmployeesSectionComponent
   ],
   imports: [
     BrowserModule,

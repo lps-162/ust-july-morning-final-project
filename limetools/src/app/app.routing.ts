@@ -3,6 +3,9 @@ import { HomeComponent } from "app/erp/home/home.component";
 import { AboutComponent } from "app/erp/about/about.component";
 import { EmployeesListComponent } from "app/erp/employees/employees-list/employees-list.component";
 import { EmployeeDetailsComponent } from "app/erp/employees/employee-details/employee-details.component";
+import { NotFoundComponent } from "app/erp/not-found/not-found.component";
+import { EmployeeCreateComponent } from "app/erp/employees/employee-create/employee-create.component";
+import { EmployeesSectionComponent } from "app/erp/employees/employees-section/employees-section.component";
 
 
 const appRoutes: Routes = [
@@ -16,15 +19,25 @@ const appRoutes: Routes = [
     },
     {
         path: 'employees',
-        component: EmployeesListComponent
-    },
-    {
-        path: 'employees/:id',
-        component: EmployeeDetailsComponent
+        component: EmployeesSectionComponent,
+        children: [
+            {
+                path: '',
+                component: EmployeesListComponent
+            },
+            {
+                path: 'create',
+                component: EmployeeCreateComponent
+            },
+            {
+                path: ':id',
+                component: EmployeeDetailsComponent
+            },
+        ]
     },
     {
         path: '**',
-        component: HomeComponent
+        component: NotFoundComponent
     }
 ];
 
