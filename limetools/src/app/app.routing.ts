@@ -19,21 +19,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'employees',
-        component: EmployeesSectionComponent,
-        children: [
-            {
-                path: '',
-                component: EmployeesListComponent
-            },
-            {
-                path: 'create',
-                component: EmployeeCreateComponent
-            },
-            {
-                path: ':id',
-                component: EmployeeDetailsComponent
-            },
-        ]
+        loadChildren : 'app/erp/employees/employees.module#EmployeesModule'
     },
     {
         path: '**',
