@@ -7,6 +7,7 @@ import { AboutComponent } from './erp/about/about.component';
 import { EmployeesListComponent } from './erp/employees/employees-list/employees-list.component';
 import { NavbarComponent } from './erp/navbar/navbar.component';
 import { appRouting } from './app.routing';
+import { EmployeeDetailsComponent } from './erp/employees/employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { appRouting } from './app.routing';
     HomeComponent,
     AboutComponent,
     EmployeesListComponent,
-    NavbarComponent
+    NavbarComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,

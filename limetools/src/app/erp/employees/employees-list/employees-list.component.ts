@@ -8,7 +8,7 @@ import { listOfEmployees } from '../../../shared/mock-data/mock-employees';
 })
 export class EmployeesListComponent implements OnInit {
   gridData;
-
+  
   constructor() { }
 
   ngOnInit() {
