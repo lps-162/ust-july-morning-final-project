@@ -8,6 +8,7 @@ import { NavbarComponent } from './erp/navbar/navbar.component';
 import { appRouting } from './app.routing';
 import { NotFoundComponent } from './erp/not-found/not-found.component';
 import { EmployeesModule } from "app/erp/employees/employees.module";
+import { EmployeesService } from "app/shared/services/employees.service";
 
 @NgModule({
   declarations: [

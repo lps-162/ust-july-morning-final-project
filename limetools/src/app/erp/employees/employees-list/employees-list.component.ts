@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { listOfEmployees } from '../../../shared/mock-data/mock-employees';
+import { EmployeesService } from "app/shared/services/employees.service";
 
 @Component({
   selector: 'app-employees-list',
@@ -8,11 +8,15 @@ import { listOfEmployees } from '../../../shared/mock-data/mock-employees';
 })
 export class EmployeesListComponent implements OnInit {
   gridData;
+  errorMessage;
   
-  constructor() { }
+  constructor(private empService: EmployeesService) { }
 
   ngOnInit() {
-    this.gridData = listOfEmployees;
+    this.empService.getEmployees()
+      .subscribe(employees => this.gridData = employees,
+                 err => console.log(err));
+    
   }
 
 }

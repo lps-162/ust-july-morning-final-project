@@ -1,5 +1,17 @@
-<h3>
-  Employee Details Page
+<div *ngIf="employee">
+  <h3>
+  Employee Details - {{ employee.id }}
 </h3>
 
-Employee Id : {{ employeeId }}
+  Emp No : {{ employee.emp_no }}
+  <br>  
+  First Name : {{ employee.first_name }}
+  <br>
+  Last Name: {{ employee.last_name }}
+  <br>
+  City: {{ employee.city }}
+  <br>
+  <!--<img [src]="employee.photo_url" alt="" 
+    class="thumbnail" />-->
+</div>
+
