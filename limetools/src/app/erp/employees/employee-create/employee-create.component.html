@@ -1,6 +1,6 @@
 <div class="col-sm-6">
-  <div class="alert alert-success" *ngIf="successMessage">
-    {{ successMessage }}
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    {{ errorMessage }}
   </div>
   
 
@@ -8,39 +8,54 @@
    Create Employee
  </h3>
 
-  <form (ngSubmit)="createEmployee()">
+  <form (ngSubmit)="createEmployee()" [formGroup]="createForm">
 
     <div class="form-group" 
-        [ngClass]="{'has-error': empNo.dirty && empNo.invalid, 'has-success': !(empNo.dirty && empNo.invalid)}">
-     Emp No:
+        [ngClass]="{'has-error': formErrors.emp_no, 
+                    'has-success': !formErrors.emp_no}">
+      Emp No:
       <input type="text" class="form-control" 
-        name="emp_no" [(ngModel)]="employee.emp_no" required #empNo="ngModel">
+        name="emp_no" formControlName="emp_no">
 
-      <span class="help-block" *ngIf="empNo.dirty && empNo.invalid">
-        Name is Required
+       <span class="help-block" *ngIf="formErrors.emp_no">
+        {{ formErrors.emp_no }}
       </span>
-  
     </div>
 
-    <div class="form-group">
+    <div class="form-group"
+     [ngClass]="{'has-error': formErrors.first_name, 
+                    'has-success': !formErrors.first_name}">
       First Name:
       <input type="text" class="form-control" 
-        name="first_name" [(ngModel)]="employee.first_name">
+        name="first_name" formControlName="first_name">
+      <span class="help-block" *ngIf="formErrors.first_name">
+        {{ formErrors.first_name }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group"  
+          [ngClass]="{'has-error': formErrors.last_name, 
+                    'has-success': !formErrors.last_name}">
       Last Name:
       <input type="text" class="form-control" 
-        name="last_name" [(ngModel)]="employee.last_name">
+        name="last_name" formControlName="last_name">
+      <span class="help-block" *ngIf="formErrors.last_name">
+        {{ formErrors.last_name }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group"  
+          [ngClass]="{'has-error': formErrors.city, 
+                    'has-success': !formErrors.city}">
       City:
       <input type="text" class="form-control" 
-        name="city" [(ngModel)]="employee.city">
+        name="city" formControlName="city">
+      <span class="help-block" *ngIf="formErrors.city">
+        {{ formErrors.city }}
+      </span>
     </div>
     
-    <input type="submit" class="btn btn-sm btn-info" />
+    <input type="submit" [disabled]="!isFormValid" class="btn btn-sm btn-info" />
 
   </form>
 </div>

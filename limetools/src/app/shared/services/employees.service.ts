@@ -19,11 +19,7 @@ export class EmployeesService {
 
   private handleError(err) {
     const errBody = err.json();
-    let errMessage: string;
-    console.log(errBody);
-    if (errBody.error.statusCode === 404) {
-      errMessage = '404: Resource Not Found';
-    }
+    let errMessage = errBody.error.message;
     
     return Observable.throw(errMessage);
   }
